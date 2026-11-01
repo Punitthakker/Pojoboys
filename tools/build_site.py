@@ -4,7 +4,7 @@ from build_brand import crest, avatar, lockup_h, mark_only, CHALK, ORANGE, BLACK
 from build_merch import inner, tee
 
 a = json.load(open("build/site_assets.json"))
-t = open("site/template.html").read()
+t = open("tools/site-template.html").read().replace("__FONTS__", open("tools/fonts.css").read())
 
 b = a["bounds"]; wb = a["word_bounds"]
 markvb = f"{b[0]:.2f} {b[1]:.2f} {b[2]-b[0]:.2f} {b[3]-b[1]:.2f}"
